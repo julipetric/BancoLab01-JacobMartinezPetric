@@ -4,7 +4,7 @@
     <string name="lblCUIT">CUIT / CUIL</string>
     <string name="lblMonto">Monto a Invertir</string>
     <string name="lblDiasSeleccionados">Días</string>
-    <string name="lblDias">Dias</string>
+    <string name="lblDias">Días de plazo</string>
     <string name="lblPerf">Rendimiento</string>
     <string-array name="lblMoneda">Moneda</string-array>
     <string name="lblAviso">Avisar por mail antes del vencimiento</string>
