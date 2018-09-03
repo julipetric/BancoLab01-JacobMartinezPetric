@@ -105,10 +105,7 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(cliente.getMail().isEmpty()){
-                    Toast toast1 = Toast.makeText(getApplicationContext(),getResources().getString(R.string.mensajeATyC), Toast.LENGTH_SHORT);
-                    toast1.setGravity(Gravity.CENTER,Gravity.CENTER,Gravity.CENTER);
 
-                    toast1.show();
                 }
             }
         });
