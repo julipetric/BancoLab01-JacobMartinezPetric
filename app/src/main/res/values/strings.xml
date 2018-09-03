@@ -19,4 +19,5 @@
     <string name="resultado1">Fueron seleccionados </string>
     <string name="resultado2"> días para el plazo</string>
     <string name="lblIntereses">0.0</string>
+    <string name="mensajeATyC">Es obligatorio aceptar los términos y condiciones"</string>
 </resources>

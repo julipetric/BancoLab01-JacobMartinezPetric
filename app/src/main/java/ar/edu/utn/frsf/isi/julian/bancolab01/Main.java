@@ -2,13 +2,17 @@ package ar.edu.utn.frsf.isi.julian.bancolab01;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import ar.edu.utn.frsf.isi.julian.bancolab01.modelo.Cliente;
@@ -59,11 +63,14 @@ public class Main extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 setPlazo.setText(getResources().getString(R.string.resultado1)+ " " + (progress+10) + " " + getResources().getString(R.string.resultado2));
-
                 pf.setDias(progress+10);
-                Double montoAux = Double.valueOf(edtMonto.getText().toString());
-                pf.setMonto(montoAux);
-                mostrarIntereses.setText(pf.intereses().toString());
+                if(edtMonto.getText().toString().isEmpty()){
+                    mostrarIntereses.setText(getResources().getString(R.string.lblIntereses));
+                }else {
+
+                    pf.setMonto(Double.valueOf(edtMonto.getText().toString()));
+                    mostrarIntereses.setText(pf.intereses().toString());
+                }
 
 
             }
@@ -76,6 +83,33 @@ public class Main extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
+            }
+        });
+
+        chkAceptoTerminos.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    btnHacerPlazoFijo.setEnabled(true);
+                } else {
+                    btnHacerPlazoFijo.setEnabled(false);
+                    Toast toast1 = Toast.makeText(getApplicationContext(),getResources().getString(R.string.mensajeATyC), Toast.LENGTH_SHORT);
+                    toast1.setGravity(Gravity.CENTER,Gravity.CENTER,Gravity.CENTER);
+
+                    toast1.show();
+                }
+            }
+        });
+
+        btnHacerPlazoFijo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(cliente.getMail().isEmpty()){
+                    Toast toast1 = Toast.makeText(getApplicationContext(),getResources().getString(R.string.mensajeATyC), Toast.LENGTH_SHORT);
+                    toast1.setGravity(Gravity.CENTER,Gravity.CENTER,Gravity.CENTER);
+
+                    toast1.show();
+                }
             }
         });
     }
