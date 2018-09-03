@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import ar.edu.utn.frsf.isi.julian.bancolab01.modelo.Cliente;
@@ -27,6 +28,9 @@ public class Main extends AppCompatActivity {
     private Switch swAvisarVencimiento;
     private ToggleButton togAccion;
     private CheckBox chkAceptoTerminos;
+    private TextView setPlazo;
+    private TextView mostrarIntereses;
+
 
 
     @Override
@@ -45,9 +49,38 @@ public class Main extends AppCompatActivity {
         swAvisarVencimiento = (Switch) findViewById(R.id.swAvisarVencimiento);
         togAccion = (ToggleButton) findViewById(R.id.togAccion);
         chkAceptoTerminos = (CheckBox) findViewById(R.id.chkAceptoTerminos);
+        setPlazo = (TextView) findViewById(R.id.tvDiasSeleccionados);
+        mostrarIntereses = (TextView) findViewById(R.id.tvIntereses);
+
 
         btnHacerPlazoFijo.setEnabled(false);
+
+        seekDias.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                setPlazo.setText(getResources().getString(R.string.resultado1)+ " " + (progress+10) + " " + getResources().getString(R.string.resultado2));
+
+                pf.setDias(progress+10);
+                Double montoAux = Double.valueOf(edtMonto.getText().toString());
+                pf.setMonto(montoAux);
+                mostrarIntereses.setText(pf.intereses().toString());
+
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
+
+
 
     
 }

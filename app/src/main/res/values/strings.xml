@@ -3,7 +3,7 @@
     <string name="lblMail">Correo Electronico</string>
     <string name="lblCUIT">CUIT / CUIL</string>
     <string name="lblMonto">Monto a Invertir</string>
-    <string name="lblDiasSeleccionados">Días</string>
+    <string name="lblDiasSeleccionados">"Fueron seleccionados 10 días para el plazo"</string>
     <string name="lblDias">Días de plazo</string>
     <string name="lblPerf">Rendimiento</string>
     <string-array name="lblMoneda">Moneda</string-array>
@@ -16,4 +16,7 @@
     <string name="lblMonedaPesos">AR$</string>
     <string name="lblAccionVencimientoRenovar">RENOVAR PLAZO FIJO</string>
     <string name="lblAccionVencimientoAcreditar">ACREDITAR EN CUENTA</string>
+    <string name="resultado1">Fueron seleccionados </string>
+    <string name="resultado2"> días para el plazo</string>
+    <string name="lblIntereses">0.0</string>
 </resources>

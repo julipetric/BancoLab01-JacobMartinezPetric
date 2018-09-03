@@ -95,7 +95,7 @@ public class PlazoFijo {
                 '}';
     }
 
-    public Double calcularTasa(){
+    private Double calcularTasa(){
         if(dias< 30 && monto <=5000) return Double.valueOf(tasas[0]);
         if(dias>= 30 && monto <=5000) return Double.valueOf(tasas[1]);
         if(dias <30 && monto >5000 && monto <=99999) return Double.valueOf(tasas[2]);
@@ -107,9 +107,7 @@ public class PlazoFijo {
     }
 
     public Double intereses(){
-        Double interes;
-        interes = this.monto*(Math.pow(((1+(this.calcularTasa()/100))),(this.dias/360))-1);
-        return interes;
+        return this.getMonto()*(Math.pow(((1+(this.calcularTasa()/100))),(this.getDias().doubleValue()/360))-1);
     }
 
 }
