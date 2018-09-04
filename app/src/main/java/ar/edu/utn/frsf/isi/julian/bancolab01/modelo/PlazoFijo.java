@@ -101,7 +101,6 @@ public class PlazoFijo {
         if(dias <30 && monto >99999) return Double.valueOf(tasas[4]);
         if(dias >=30 && monto >99999) return Double.valueOf(tasas[5]);
         return 0.0;
-        // TODO SEGUIR PROGRAMANDO THIS
     }
 
     public Double intereses(){

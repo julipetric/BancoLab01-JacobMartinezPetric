@@ -98,7 +98,7 @@ public class Main extends AppCompatActivity {
                 }else {
 
                     pf.setMonto(Double.valueOf(edtMonto.getText().toString()));
-                    mostrarIntereses.setText(pf.intereses().toString());
+                    mostrarIntereses.setText("$"+pf.intereses().toString());
                 }
             }
 
@@ -120,7 +120,7 @@ public class Main extends AppCompatActivity {
                 }else {
 
                     pf.setMonto(Double.valueOf(edtMonto.getText().toString()));
-                    mostrarIntereses.setText(pf.intereses().toString());
+                    mostrarIntereses.setText("$"+pf.intereses().toString());
                 }
 
 
