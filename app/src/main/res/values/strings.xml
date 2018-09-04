@@ -20,4 +20,6 @@
     <string name="resultado2"> días para el plazo</string>
     <string name="lblIntereses">0.0</string>
     <string name="mensajeATyC">Es obligatorio aceptar los términos y condiciones"</string>
+    <string name="mensajeErrorPF">Debe corregir las casillas que están en rojo</string>
+    <string name="tvPlazoFijocorrecto">El plazo fijo se realizó correctamente</string>
 </resources>

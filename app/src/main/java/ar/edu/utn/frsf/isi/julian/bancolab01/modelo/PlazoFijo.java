@@ -84,15 +84,13 @@ public class PlazoFijo {
 
     @Override
     public String toString() {
-        return "PlazoFijo{" +
-                "dias=" + dias +
-                ", monto=" + monto +
-                ", avisarVencimiento=" + avisarVencimiento +
-                ", renovarAutomaticamente=" + renovarAutomaticamente +
-                ", moneda=" + moneda +
-                ", tasas=" + Arrays.toString(tasas) +
-                ", cliente=" + cliente +
-                '}';
+        return  "Dias: " + dias +
+                ", monto: " + monto +
+                ", avisarVencimiento: " + avisarVencimiento +
+                ", renovarAutomaticamente: " + renovarAutomaticamente +
+                ", moneda: " + moneda +
+                "\n Email: " + cliente.getMail() +
+                ", CUIT/CUIL: " + cliente.getCuil();
     }
 
     private Double calcularTasa(){

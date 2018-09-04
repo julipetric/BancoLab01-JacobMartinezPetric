@@ -43,13 +43,15 @@
         android:id="@+id/optMoneda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <RadioButton
             android:id="@+id/optDolar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:checked="false"
             android:text="@string/lblMonedaDolar" />
 
         <RadioButton
@@ -144,11 +146,15 @@
         android:text="@string/btnHacerPF" />
 
     <TextView
+        android:id="@+id/tvPlazoCorrecto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
         android:id="@+id/edtMensajes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:maxLines="6"
-        android:text="TextView" />
+        android:maxLines="6" />
 
 </LinearLayout>
