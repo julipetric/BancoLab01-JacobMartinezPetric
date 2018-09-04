@@ -43,8 +43,8 @@
         android:id="@+id/optMoneda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:checkedButton="@+id/optPesos"
+        android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/optDolar"

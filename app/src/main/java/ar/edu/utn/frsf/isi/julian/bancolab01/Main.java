@@ -4,6 +4,8 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -80,6 +82,32 @@ public class Main extends AppCompatActivity {
         tvPlazoCorrecto=(TextView) findViewById(R.id.tvPlazoCorrecto) ;
 
         btnHacerPlazoFijo.setEnabled(false);
+
+
+        edtMonto.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if(edtMonto.getText().toString().isEmpty()){
+                    mostrarIntereses.setText(getResources().getString(R.string.lblIntereses));
+                }else {
+
+                    pf.setMonto(Double.valueOf(edtMonto.getText().toString()));
+                    mostrarIntereses.setText(pf.intereses().toString());
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
 
         pf.setDias(10);
         seekDias.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -170,9 +198,9 @@ public class Main extends AppCompatActivity {
                     pf.setAvisarVencimiento(swAvisarVencimiento.isChecked());
                     pf.setRenovarAutomaticamente(togAccion.isChecked());
                     pf.setCliente(cliente);
-                    tvPlazoCorrecto.setTextColor(Color.GREEN);
+                    tvPlazoCorrecto.setTextColor(getResources().getColor(R.color.colorResultado));
                     tvPlazoCorrecto.setText(getResources().getText(R.string.tvPlazoFijocorrecto));
-                    tvMensajes.setTextColor(Color.GREEN);
+                    tvMensajes.setTextColor(getResources().getColor(R.color.colorResultado));
                     tvMensajes.setText(pf.toString());
 
                 }

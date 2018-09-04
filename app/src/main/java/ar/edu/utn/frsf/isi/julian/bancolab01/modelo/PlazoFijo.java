@@ -89,7 +89,7 @@ public class PlazoFijo {
                 ", avisarVencimiento: " + avisarVencimiento +
                 ", renovarAutomaticamente: " + renovarAutomaticamente +
                 ", moneda: " + moneda +
-                "\n Email: " + cliente.getMail() +
+                "\nEmail: " + cliente.getMail() +
                 ", CUIT/CUIL: " + cliente.getCuil();
     }
 
